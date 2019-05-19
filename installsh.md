@@ -1,13 +1,22 @@
-//-----------install-------------
+## install
+
+- use apt
+
+```
 //use apt
 sudo apt update
 sudo apt install git curl zsh qbittorrent python3-pip chrome-gnome-shell gnome-tweaks wine-stable tree vim mcomix zsh-antigen
+```
 
+```
 //use ppa
 sudo add-apt-repository ppa:otto-kesselgulasch/gimp
 sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo apt-get update
 sudo apt-get install gimp
+```
+
+
 
 //untill 18.04
 sudo add-apt-repository -y ppa:lintaro/mcomix
@@ -18,25 +27,49 @@ vscode vlc dropbox vivaldi-stable gitkraken
 
 //use pip3
 
+---
 
-//-----------setting----------------
-//change keymap
+## setting
+
+### change keymap
+
+1. git clone
+```
 mkdir /home/ren/Repository
 cd /home/ren/Repository
 git clone https://github.com/skyeanka/environment_buildup_set.git
+```
 
-//active the keymap change in vscode
-1 go Configur 
-2 "keyboard.dispatch": "keyCode"
+2. copy keymap
 
-//change dic-language
+  ```
+  sudo cp ./xkb_keymap/pc /usr/share/X11/xkb/symbols/pc
+  sudo cp ./xkb_keymap/us /usr/share/X11/xkb/symbols/us
+  ```
+
+3. change system-lang
+    1. go settings>region&language>input sources
+    2. remove all, and add English(US),Japanese(Mozc)
+
+ 4. active the keymap change in vscode
+
+    1. go Configur 
+    2. "keyboard.dispatch": "keyCode"
+
+### change dic-language
+```
 LANG=C xdg-user-dirs-gtk-update
+```
 
-//change login shell
+### change login shell
+```
 which zsh
 chsh
+```
 
-//wine setting
+### wine setting
+
+```
 sudo dpkg --add-architecture i386
 
 wget -nc https://dl.winehq.org/wine-builds/Release.key
@@ -46,4 +79,5 @@ sudo apt update
 sudo apt install --install-recommends winehq-stable
 
 winetricks allfonts
+```
 
