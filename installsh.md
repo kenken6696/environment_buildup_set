@@ -5,7 +5,7 @@
 ```
 //use apt
 sudo apt update
-sudo apt install git curl zsh qbittorrent python3-pip chrome-gnome-shell gnome-tweaks wine-stable tree vim mcomix zsh-antigen
+sudo apt install git curl zsh qbittorrent python3-pip chrome-gnome-shell gnome-tweaks wine-stable tree vim mcomix zsh-antigen unrar
 ```
 
 ```
