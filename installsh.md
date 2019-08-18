@@ -1,31 +1,16 @@
 ## install
 
-- use apt
-
 ```
 //use apt
 sudo apt update
 sudo apt install git curl zsh qbittorrent python3-pip chrome-gnome-shell gnome-tweaks wine-stable tree vim mcomix zsh-antigen unrar
-```
-
-```
-//use ppa
-sudo add-apt-repository ppa:otto-kesselgulasch/gimp
-sudo add-apt-repository ppa:graphics-drivers/ppa
-sudo apt-get update
-sudo apt-get install gimp
+// use gui installer
+# vscode vlc dropbox vivaldi-stable gitkraken
+// add repo and use apt
+# typora docker docker-compose
 ```
 
 
-
-//untill 18.04
-sudo add-apt-repository -y ppa:lintaro/mcomix
-sudo apt install -y mcomix
-
-//use gui installer
-vscode vlc dropbox vivaldi-stable gitkraken
-
-//use pip3
 
 ---
 
@@ -80,4 +65,24 @@ sudo apt install --install-recommends winehq-stable
 
 winetricks allfonts
 ```
+
+
+
+### docker setting
+
+```
+cat /etc/docker/daemon.json
+# {
+#     "default-runtime": "nvidia",
+#     "max-concurrent-downloads": 100,
+#     "runtimes": {
+#         "nvidia": {
+#             "path": "nvidia-container-runtime",
+#             "runtimeArgs": []
+#         }
+#     }
+# }
+```
+
+
 
