@@ -26,9 +26,9 @@ cd /home/ren/Repository
 git clone https://github.com/skyeanka/environment_buildup_set.git
 ```
 
-2. copy keymap
+2. copy keymap  
 
-片手用配列へ変更
+    片手用配列へ変更
   ```
   sudo cp ./xkb_keymap/pc /usr/share/X11/xkb/symbols/pc
   sudo cp ./xkb_keymap/us /usr/share/X11/xkb/symbols/us
@@ -38,8 +38,7 @@ git clone https://github.com/skyeanka/environment_buildup_set.git
     1. go settings>region&language>input sources
     2. remove all, and add English(US),Japanese(Mozc)
 
- 4. active the keymap change in vscode
-
+ 4. active the keymap change in vscode  
   vscodeはデフォルトだと独自キー配列なので片手用配列へ変更
 
     1. go Configur 
@@ -56,7 +55,7 @@ LANG=C xdg-user-dirs-gtk-update
 which zsh
 chsh
 ```
-2. antigen config 
+2. antigen config  
 [ここ](https://qiita.com/t-yng/items/2f138968939b8f75ba6a)参考に
 
 ### wine setting
