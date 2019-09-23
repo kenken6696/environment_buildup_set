@@ -1,20 +1,20 @@
 ## install
 
 ```
-//use apt
+# use apt
 sudo apt update
-sudo apt install -y git curl zsh python3-pip chrome-gnome-shell gnome-tweaks wine-stable tree vim mcomix zsh-antigen unrar
-// use gui installer
-# vscode vlc dropbox vivaldi-stable gitkraken
-// add repo and use apt
-# typora docker docker-compose
+sudo apt install -y git curl zsh qbittorrent python3-pip chrome-gnome-shell gnome-tweaks wine-stable tree vim mcomix zsh-antigen unrar docker-compose
+# use gui installer
+# vscode vlc dropbox vivaldi-stable gitkraken typora docker docker-compose
 ```
-
-
-
 ---
 
 ## setting
+
+### clone repo
+```
+sh clone_myrepo.sh
+```
 
 ### change keymap
 
@@ -50,11 +50,14 @@ git clone https://github.com/skyeanka/environment_buildup_set.git
 LANG=C xdg-user-dirs-gtk-update
 ```
 
-### change login shell
+### zsh setting
+1. change login shell
 ```
 which zsh
 chsh
 ```
+2. antigen config 
+[ここ](https://qiita.com/t-yng/items/2f138968939b8f75ba6a)参考に
 
 ### wine setting
 
@@ -71,22 +74,30 @@ sudo apt install --install-recommends winehq-stable
 winetricks allfonts
 ```
 
-
 ### docker setting
-docker runしたときのデフォルト値など
+1. add user
+
+```
+sudo gpasswd -a $(whoami) docker
+sudo chgrp docker /var/run/docker.sock
+sudo service docker restart
+```
+
+2. docker run config
 
 ```
 cat /etc/docker/daemon.json
-# {
-#     "default-runtime": "nvidia",
-#     "max-concurrent-downloads": 100,
-#     "runtimes": {
-#         "nvidia": {
-#             "path": "nvidia-container-runtime",
-#             "runtimeArgs": []
-#         }
-#     }
-# }
+
+{
+     "default-runtime": "nvidia",
+     "max-concurrent-downloads": 100,
+     "runtimes": {
+         "nvidia": {
+             "path": "nvidia-container-runtime",
+             "runtimeArgs": []
+         }
+     }
+ }
 ```
 
 
