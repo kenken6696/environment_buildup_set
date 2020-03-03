@@ -14,7 +14,7 @@ xkb_symbols "pc105" {
     include "pc(editing)"
     include "keypad(x11)"
 
-    key <BKSP> {	[ Shift_R        	]	};
+    key <BKSP> {	[ BackSpace, BackSpace	]	};
 
     key  <TAB> {	[ Tab,	ISO_Left_Tab	]	};
     key <RTRN> {	[ Return  	]	};
@@ -26,7 +26,7 @@ xkb_symbols "pc105" {
     key <LCTL> {	[ Control_L		]	};
     key <LWIN> {	[ Super_L		]	};
 
-    key <RTSH> {	[ Shift_R 	]	};
+    key <RTSH> {	[ Shift_R        	]	};
     key <RCTL> {	[ BackSpace, BackSpace	]	};
     key <RWIN> {	[ Super_R		]	};
     key <MENU> {	[ Menu			]	};
