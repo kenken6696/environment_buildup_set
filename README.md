@@ -2,11 +2,9 @@
 
 ```
 # use apt
-sudo apt update
-sudo apt install -y git curl zsh qbittorrent python3-pip chrome-gnome-shell gnome-tweaks wine-stable tree vim zsh-antigen unrar vscode mcomix
-sudo snap install vlc
+sudo apt update & sudo apt install -y git curl zsh python3-pip chrome-gnome-shell gnome-tweaks tree vim zsh-antigen unrar vscode
 # manual install
-# dropbox vivaldi-stable gitkraken typora docker docker-compose
+# vivaldi-stable typora docker docker-compose
 ```
 ---
 
@@ -19,11 +17,9 @@ LANG=C xdg-user-dirs-gtk-update
 
 ### clone repo
 ```
-mkdir /home/ren/Repository
-cd /home/ren/Repository
-git clone https://github.com/skyeanka/environment_buildup_set.git
-cd environment_buildup_set
-sh clone_myrepo.sh
+mkdir ~/Repository
+cd $_
+curl https://api.github.com/users/skyeanka/repos | jq -r '.[].html_url' | xargs -I{}  git clone {}.git
 ```
 
 ### change keymap
