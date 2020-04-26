@@ -1,10 +1,12 @@
+# for Ubuntu 20.04
+
 ## install
 
 ```
 # use apt
-sudo apt update & sudo apt install -y git curl zsh python3-pip chrome-gnome-shell gnome-tweaks tree vim zsh-antigen unrar vscode
+sudo apt update & sudo apt install -y git curl zsh python3-pip chrome-gnome-shell gnome-tweaks tree vim zsh-antigen unrar jq docker.io docker-compose
 # manual install
-# vivaldi-stable typora docker docker-compose
+# vivaldi-stable typora
 ```
 ---
 
@@ -27,8 +29,8 @@ curl https://api.github.com/users/skyeanka/repos | jq -r '.[].html_url' | xargs 
 1. copy keymap  
    片手用配列へ変更
   ```
-  sudo cp ./xkb_keymap/pc /usr/share/X11/xkb/symbols/pc
-  sudo cp ./xkb_keymap/us /usr/share/X11/xkb/symbols/us
+  sudo cp ~/Repository/environment_buildup_set/xkb_keymap/pc /usr/share/X11/xkb/symbols/pc
+  sudo cp ~/Repository/environment_buildup_set/xkb_keymap/us /usr/share/X11/xkb/symbols/us
   ```
 
 2. change system-keymap
