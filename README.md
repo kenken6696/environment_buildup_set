@@ -61,7 +61,8 @@ ssh-keygen -t rsa
 ssh-copy-id ${user}@${server_host}
 ```
 2. permit only pubkey-login
-```/etc/ssh/sshd_config
+rewrite /etc/ssh/sshd_config
+```:/etc/ssh/sshd_config
 PermitRootLogin no
 ```
 
