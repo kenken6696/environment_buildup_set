@@ -4,7 +4,7 @@
 
 ```
 # use apt
-sudo apt update & sudo apt install -y git curl zsh python3-pip chrome-gnome-shell gnome-tweaks tree vim zsh-antigen unrar jq docker.io docker-compose
+sudo apt update & sudo apt install -y git curl zsh python3-pip chrome-gnome-shell gnome-tweaks tree vim zsh-antigen unrar jq docker.io docker-compose openssh-server
 # manual install
 # vivaldi-stable typora
 ```
@@ -52,6 +52,18 @@ chsh
 ```
 2. antigen config  
 [ここ](https://qiita.com/t-yng/items/2f138968939b8f75ba6a)参考に
+
+### ssh setting
+1. register pubkey
+```
+# on client pc
+ssh-keygen -t rsa
+ssh-copy-id ${user}@${server_host}
+```
+2. permit only pubkey-login
+```/etc/ssh/sshd_config
+PermitRootLogin no
+```
 
 ### docker setting
 1. add user
