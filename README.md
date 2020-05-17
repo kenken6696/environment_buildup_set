@@ -4,7 +4,7 @@
 
 ```
 # use apt
-sudo apt update & sudo apt install -y git curl zsh python3-pip chrome-gnome-shell gnome-tweaks tree vim zsh-antigen unrar jq docker.io docker-compose openssh-server
+sudo apt update & sudo apt install -y git curl zsh python3-pip chrome-gnome-shell gnome-tweaks tree vim zsh-antigen unrar jq docker.io docker-compose openssh-server xonsh
 # manual install
 # vivaldi-stable typora
 ```
