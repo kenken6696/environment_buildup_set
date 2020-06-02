@@ -23,6 +23,10 @@ mkdir ~/Repository
 cd $_
 curl https://api.github.com/users/skyeanka/repos | jq -r '.[].html_url' | xargs -I{}  git clone {}.git
 ```
+### copy profiles
+```
+cp .zshrc ~/
+```
 
 ### change keymap
 
