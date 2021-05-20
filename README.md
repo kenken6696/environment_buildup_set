@@ -1,3 +1,9 @@
+# for Windows 10
+import keyswap folder 
+
+# foy Mac
+import karabiner folder
+
 # for Ubuntu 20.04
 
 ## install
