@@ -1,3 +1,7 @@
+# for any OS
+1. Google Japanese Input
+ change Key 'Eiso' mapping for Mode 'DirectInput' to 'Activate IME', and the mapping for the others to 'Deactivate IME'
+
 # for Windows 10
 import keyswap folder 
 
