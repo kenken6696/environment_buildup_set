@@ -19,3 +19,8 @@ alias aup='sudo apt upgrade'
 alias t='tree -C'
 
 alias cr='cargo run'
+
+# atcoder
+alias accn='acc n'
+alias acct='oj t -c 'python3 main.py''
+alias accs='acc submit main.py -- --guess-python-interpreter pypy'
