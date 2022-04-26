@@ -23,4 +23,32 @@ alias cr='cargo run'
 # atcoder
 alias accn='acc n'
 alias acct='oj t -c "python3 main.py"'
-alias accs='acc submit main.py -- --guess-python-interpreter pypy'
+alias accs='acc submit main.py -- -y --guess-python-interpreter pypy'
+
+# func
+accna() {
+    if [ $# != 1 ]; then
+        echo accna abc123/d のように入力してください
+        return 1
+    fi
+    if echo $1 | grep / >/dev/null; then
+        contest=$(echo $1|cut -f1 -d/)
+    else
+        echo accna abc123/d のように入力してください
+        return 1
+    fi
+
+    DIR="$HOME/Repository/atcoder/"
+    if [ -d $DIR$contest ];then
+        echo 参加済みです
+        cd $DIR$contest
+        acc add
+        return 0
+    else
+        echo 初参加です､フォルダを作成します
+        cd $DIR
+        acc n $contest
+    fi
+    sleep 3
+    python3 ~/Repository/atcoder/acc_config/auto_acc.py toggle $2
+}
