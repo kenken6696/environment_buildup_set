@@ -37,18 +37,19 @@ accna() {
         echo accna abc123/d のように入力してください
         return 1
     fi
-
     DIR="$HOME/Repository/atcoder/"
     if [ -d $DIR$contest ];then
-        echo 参加済みです
+        echo 参加済みだね
         cd $DIR$contest
         acc add
-        return 0
     else
-        echo 初参加です､フォルダを作成します
+        echo 初参加だね
         cd $DIR
         acc n $contest
     fi
-    sleep 3
-    python3 ~/Repository/atcoder/acc_config/auto_acc.py toggle $2
+    accr=$?
+    if [ $accr = 0 ]; then
+       cd $DIR$1
+       code main.py
+    fi
 }
