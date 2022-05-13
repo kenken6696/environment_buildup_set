@@ -25,7 +25,6 @@ alias accn='acc n'
 alias acct='oj t -c "python3 main.py"'
 alias accs='acc submit main.py -- -y --guess-python-interpreter pypy'
 
-# func
 accna() {
     usage(){
         echo "
@@ -38,7 +37,7 @@ Args:
 
 Option:
     -r: use this option to review.
-        make backup dir '/<problem-id>_bk_yyyymmdd_hhmmss' and init original dir using acc_config/py/main.py
+        backup main.py as 'bk_yyyymmdd_hhmmss.py' and replace it for acc_config/py/main.py
         ">&2
     }
     DIR="$HOME/Repository/atcoder"
@@ -68,11 +67,9 @@ Option:
     if $flag_r; then
         echo 'preparing to Review...'
         if [ -d $DIR/$contest_id/$problem_id ];then
-            bk_dir=$problem_id'_bk_'$(date "+%Y%m%d_%H%M%S")
-            mkdir $DIR/$contest_id/$bk_dir
-            cp -r $DIR/$contest_id/$problem_id/ $DIR/$contest_id/$bk_dir/
-            cp $(acc config-dir)/py/main.py $DIR/$contest_id/$problem_id/
             cd $DIR/$contest_id/$problem_id
+            cp main.py 'bk_'$(date "+%Y%m%d_%H%M%S").py
+            cp $(acc config-dir)/py/main.py .
             code main.py
             return 0
         else
