@@ -37,16 +37,20 @@ Args:
 
 Option:
     -r: use this option to review.
-        backup main.py as 'bk_yyyymmdd_hhmmss.py' and replace it for acc_config/py/main.py
+        backup main.py as 'bk_main.py' and replace it for acc_config/py/main.py
+    -b: use this option when finishing your review
+        replace main.py for bk_main.py and delete bk_main.py
         ">&2
     }
     DIR="$HOME/Repository/atcoder"
     flag_r=false
+    flag_b=false
     # check args
-    while getopts "rh" OPT
+    while getopts "rbh" OPT
     do
         case $OPT in
             r) flag_r=true;;
+            b) flag_b=true;;
             h) usage && return 0;;
             *) usage && return 1;;
         esac
@@ -64,11 +68,35 @@ Option:
         usage && return 1
     fi
 
+    if $flag_b; then
+        echo 'finishing Review...'
+        if [ -e $DIR/$contest_id/$problem_id/bk_main.py ];then
+            cd $DIR/$contest_id/$problem_id
+            mv bk_main.py main.py
+            return 0
+        else
+            echo 'cannot find bk_main.py:'$DIR/$contest_id/$problem_id && return 1
+        fi
+    fi
+
+    if [ -e $DIR/$contest_id/$problem_id/main.py ];then
+        echo 'You have already attended '$contest_id/$problem_id
+        echo 'Do you want to review? <y/n>'
+        read ans
+        if [ $ans = 'y' ]; then
+            flag_r=true
+        elif [ $ans = 'n' ]; then
+            return 0
+        else
+            return 1
+        fi
+    fi
+
     if $flag_r; then
         echo 'preparing to Review...'
         if [ -d $DIR/$contest_id/$problem_id ];then
             cd $DIR/$contest_id/$problem_id
-            cp main.py 'bk_'$(date "+%Y%m%d_%H%M%S").py
+            cp main.py 'bk_main.py'
             cp $(acc config-dir)/py/main.py .
             code main.py
             return 0
