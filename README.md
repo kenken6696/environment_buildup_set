@@ -64,11 +64,6 @@ mkdir ~/Repository
 cd $_
 curl https://api.github.com/users/skyeanka/repos | jq -r '.[].html_url' | xargs -I{}  git clone {}.git
 ```
-### copy profiles
-```
-cp profiles/.zshrc ~/
-```
-
 ### change keymap
 
 1. copy keymap  
@@ -102,8 +97,15 @@ cp profiles/.zshrc ~/
 ```
 chsh $USER -s $(which zsh)
 ```
-2. antigen config  
-[ここ](https://qiita.com/t-yng/items/2f138968939b8f75ba6a)参考に
+2. zsh/antigen config  
+```
+cp profiles/.zshrc ~/
+source ~/.zshrc
+```
+when an error, check where to install antigen
+```
+dpkg -L zsh-antigen
+```
 
 ### ssh setting
 1. register pubkey

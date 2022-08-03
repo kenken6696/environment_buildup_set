@@ -26,15 +26,19 @@ xkb_symbols "pc105" {
     key <LCTL> {	[ Super_L		]	};
     key <LWIN> {	[ Control_L		]	};
 
-    key <RTSH> {	[ Shift_R        	]	};
-    key <RCTL> {	[ BackSpace, BackSpace	]	};
+    key <RTSH> {	[ Shift_R      	]	};
+    key <RCTL> {	[ Control_R   	]	};
     key <RWIN> {	[ Return		]	};
     key <MENU> {	[ Menu			]	};
+
+    key <LALT> {    [ Alt_L         ]   };
+    key <RALT> {    [ BackSpace	    ]   };
 
     // Beginning of modifier mappings.
     modifier_map Shift  { Shift_L, Shift_R };
     modifier_map Lock   { Caps_Lock };
     modifier_map Control{ Control_L, Control_R };
+    modifier_map Mod1   { Alt_L, Alt_R };
     modifier_map Mod2   { Num_Lock };
     modifier_map Mod4   { Super_L, Super_R };
 
@@ -48,9 +52,8 @@ xkb_symbols "pc105" {
 
    // key <META> {	[ NoSymbol, Meta_L	]	};
    // modifier_map Mod1   { <META> };
-    key <LALT> {        [ ALT_L ] };
-    key <RALT> {        [ BackSpace, BackSpace		 ] };
-    modifier_map Mod1   { Alt_L                 };
+    key <ALT> {        [ NoSymbol, Alt_L ] };
+    modifier_map Mod1   { <ALT>            };
     key <SUPR> {	[ NoSymbol, Super_L	]	};
     modifier_map Mod4   { <SUPR> };
 

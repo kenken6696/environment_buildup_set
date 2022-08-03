@@ -1,26 +1,27 @@
-# Created by newuser for 5.8
-# completion
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
+source /usr/share/zsh-antigen/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle heroku
+antigen bundle pip
+antigen bundle lein
+antigen bundle command-not-found
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Load the theme.
+antigen theme robbyrussell
+
+# Tell Antigen that you're done.
+antigen apply
 
 # alias
-alias ls='ls --color=auto'
-alias ll='ls -l'
-alias la='ls -a'
-
-alias d='cd ~/Repository/'
-alias ..2='cd ../..'
-alias ..3='cd ../../..'
-
-alias ai='sudo apt update && sudo apt install -y'
-alias ap='sudo apt purge'
-alias aud='sudo apt update'
-alias aup='sudo apt upgrade'
-
 alias t='tree -C'
-
-alias cr='cargo run'
-
-# atcoder
+## atcoder
 alias accn='acc n'
 alias acct='oj t -c "python3 main.py"'
 alias accs='acc submit main.py -- -y --guess-python-interpreter pypy'
