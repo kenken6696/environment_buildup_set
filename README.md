@@ -14,7 +14,7 @@ import karabiner folder
 dont forget to install vscode from [homepage](https://code.visualstudio.com)(because that from the others often makes trouble with japanese ime)
 ```
 # use apt
-sudo apt update & sudo apt install -y git curl zsh pip chrome-gnome-shell gnome-tweaks tree gh zsh-antigen unrar jq docker.io docker-compose openssh-server
+sudo apt update & sudo apt install -y git curl zsh pip chrome-gnome-shell gnome-tweaks tree gh zsh-antigen unrar jq openssh-server
 
 sudo add-apt-repository ppa:alessandro-strada/ppa
 sudo apt update
@@ -120,9 +120,12 @@ rewrite /etc/ssh/sshd_config
 PermitRootLogin no
 ```
 
-### docker setting
-1. add user
+### docker install and setting
+2022/08/04現在、すべて一括でインストールできるDocker DesktopはLinuxだけBeta版でハマったため、従来のやり方([Docker Engineのインストール](https://docs.docker.com/engine/install/ubuntu/))をおすすめする。  
+ちなみにdocker-composeなどはv1の古いパッケージなのでもう不要。
 
+1. add user  
+Docker Engineのインストールでは本作業が必要
 ```
 sudo gpasswd -a $(whoami) docker
 sudo chgrp docker /var/run/docker.sock
