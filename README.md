@@ -1,4 +1,4 @@
-# for any OS
+# for Windows and Mac
 1. Google Japanese Input
  change Key 'Eiso' mapping for Mode 'DirectInput' to 'Activate IME', and the mapping for the others to 'Deactivate IME'
 
@@ -8,34 +8,65 @@ import keyswap folder
 # foy Mac
 import karabiner folder
 
-# for Ubuntu 20.04
+# for Ubuntu 22.04
 
 ## install
-
+dont forget to install vscode from [homepage](https://code.visualstudio.com)(because that from the others often makes trouble with japanese ime)
 ```
 # use apt
-sudo apt update & sudo apt install -y git curl zsh python3-pip chrome-gnome-shell gnome-tweaks tree vim zsh-antigen unrar jq docker.io docker-compose openssh-server xonsh
-# manual install
-# vivaldi-stable typora
+sudo apt update & sudo apt install -y git curl zsh pip chrome-gnome-shell gnome-tweaks tree gh zsh-antigen unrar jq docker.io docker-compose openssh-server
+
+sudo add-apt-repository ppa:alessandro-strada/ppa
+sudo apt update
+sudo apt install google-drive-ocamlfuse
+
+# manual or snap install
+vivaldi-stable bluemail obsidian ticktick vlc vscode
 ```
 ---
 
 ## setting
+### gdrive
 
-### change dic-language
+```
+mkdir ~/google-drive
+google-drive-ocamlfuse ~/google-drive
+```
+
+### stop requesting password(not recommend)
+```
+sudo nano -w /etc/sudoers
+```
+
+%sudo  ALL=(ALL) ALL -> %sudo  ALL=(ALL:ALL) NOPASSWD:ALL
+
+or
+
+add yourusername ALL=(ALL) NOPASSWD: ALL
+
+or
+
+add timestamp_timeout=120
+
+if you write incorrect sudoers, you can use `pkexec visudo`
+
+### change dic-language from japanese to english
 ```
 LANG=C xdg-user-dirs-gtk-update
 ```
 
-### clone repo
+### login github and clone repo
 ```
+gh auth login
+'''
+'''
 mkdir ~/Repository
 cd $_
 curl https://api.github.com/users/skyeanka/repos | jq -r '.[].html_url' | xargs -I{}  git clone {}.git
 ```
 ### copy profiles
 ```
-cp .zshrc ~/
+cp profiles/.zshrc ~/
 ```
 
 ### change keymap
@@ -45,12 +76,20 @@ cp .zshrc ~/
   ```
   sudo cp ~/Repository/environment_buildup_set/xkb_keymap/pc /usr/share/X11/xkb/symbols/pc
   sudo cp ~/Repository/environment_buildup_set/xkb_keymap/us /usr/share/X11/xkb/symbols/us
+
+  # for magic keyboard
+  sudo cp ~/Repository/environment_buildup_set/xkb_keymap_magickeyboard/pc /usr/share/X11/xkb/symbols/pc
+  sudo cp ~/Repository/environment_buildup_set/xkb_keymap_magickeyboard/us /usr/share/X11/xkb/symbols/us
   ```
 
 2. change system-keymap
     1. go settings>region&language>input sources
-    2. remove all, and add English(US),Japanese(Mozc)
-
+    2. remain only 'Japanese(Mozc)'
+    3. go Keyboard shortcut>typing
+    4. disable the settings like 'Switch input source...'
+    5. setting Google Japanese Input
+        
+        change the mapping 'Eiso' for 'DirectInput' to 'Ctrl+Space' for 'Activate IME', and the mapping for the others mode to 'Deactivate IME'
 3. active the keymap change in vscode  
   vscodeはデフォルトだと独自キー配列なので片手用配列へ変更
 
@@ -61,8 +100,7 @@ cp .zshrc ~/
 ### zsh setting
 1. change login shell
 ```
-which zsh
-chsh
+chsh $USER -s $(which zsh)
 ```
 2. antigen config  
 [ここ](https://qiita.com/t-yng/items/2f138968939b8f75ba6a)参考に
