@@ -1,5 +1,7 @@
-source /usr/share/zsh-antigen/antigen.zsh
+# read ~/.zprofile
 
+# zsh
+source /usr/share/zsh-antigen/antigen.zsh
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
@@ -24,7 +26,8 @@ alias t='tree -C'
 ## atcoder
 alias accn='acc n'
 alias acct='oj t -c "python3 main.py"'
-alias accs='acc submit main.py -- -y --guess-python-interpreter pypy'
+alias accs='acc submit main.py -- -y --guess-python-interpreter pypy 2>/dev/null'
+  # put warning when using amd
 
 accna() {
     usage(){
