@@ -6,7 +6,8 @@
 import keyswap folder 
 
 # foy Mac
-## start
+## CUI
+### start
 - install homebrew and jq
 - clone repo
 ```
@@ -15,17 +16,35 @@ cd $_
 curl https://api.github.com/users/skyeanka/repos | jq -r '.[].html_url' | xargs -I{}  git clone {}.git
 ```
 
-## import karabiner folder
+### launchpad setting
+```
+defaults write com.apple.dock springboard-rows -int 9
+defaults write com.apple.dock springboard-columns -int 7
+killall Dock
+```
+
+### import karabiner folder
 ```
 cp -r ~/Repository/environment_buildup_set/karabiner ~/.config/karabiner
 ```
-## scr setting
+### scr setting
 ```bash
 mkdir ~/Desktop/scr
 defaults write com.apple.screencapture location ~/Desktop/scr
 defaults write com.apple.screencapture name ''
 defaults write com.apple.screencapture type jpg
 ```
+## GUI
+- mactex
+    - EnhancedでTeX動かす用
+    - [ここ]()からMacTeX.pkgをインストール
+- Zotero
+    - 同期する
+    - [zotfile](http://zotfile.com)をインストール
+    - zotfileをonedriveに指定する
+- Microsoft Office365(j)
+[ここ](https://www.jaist.ac.jp/iscenter/software/microsoft/office365/#c1300)
+
 
 # for Ubuntu 22.04
 
