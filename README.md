@@ -6,7 +6,26 @@
 import keyswap folder 
 
 # foy Mac
-import karabiner folder
+## start
+- install homebrew and jq
+- clone repo
+```
+mkdir ~/Repository
+cd $_
+curl https://api.github.com/users/skyeanka/repos | jq -r '.[].html_url' | xargs -I{}  git clone {}.git
+```
+
+## import karabiner folder
+```
+cp -r ~/Repository/environment_buildup_set/karabiner ~/.config/karabiner
+```
+## scr setting
+```bash
+mkdir ~/Desktop/scr
+defaults write com.apple.screencapture location ~/Desktop/scr
+defaults write com.apple.screencapture name ''
+defaults write com.apple.screencapture type jpg
+```
 
 # for Ubuntu 22.04
 
@@ -58,8 +77,7 @@ LANG=C xdg-user-dirs-gtk-update
 ### login github and clone repo
 ```
 gh auth login
-'''
-'''
+
 mkdir ~/Repository
 cd $_
 curl https://api.github.com/users/skyeanka/repos | jq -r '.[].html_url' | xargs -I{}  git clone {}.git
