@@ -44,6 +44,7 @@ defaults write com.apple.screencapture type jpg
     - zotfileをonedriveに指定する
 - Microsoft Office365(j)
 [ここ](https://www.jaist.ac.jp/iscenter/software/microsoft/office365/#c1300)
+    - autoupdateうざいので消す
 
 
 # for Ubuntu 22.04
