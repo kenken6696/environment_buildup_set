@@ -34,6 +34,10 @@ defaults write com.apple.screencapture location ~/Desktop/scr
 defaults write com.apple.screencapture name ''
 defaults write com.apple.screencapture type jpg
 ```
+### code(after installing VScode(GUI)
+```bash
+ln -s "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" "/usr/local/bin/code"
+```
 ## GUI
 - mactex
     - EnhancedでTeX動かす用
