@@ -13,7 +13,7 @@ import keyswap folder
 ```
 mkdir ~/Repository
 cd $_
-curl https://api.github.com/users/skyeanka/repos | jq -r '.[].html_url' | xargs -I{}  git clone {}.git
+curl https://api.github.com/users/kenken6696/repos | jq -r '.[].html_url' | xargs -I{}  git clone {}.git
 ```
 
 ### launchpad setting
@@ -25,7 +25,7 @@ killall Dock
 
 ### import karabiner folder
 ```
-cp -r ~/Repository/environment_buildup_set/karabiner ~/.config/karabiner
+cp -r ~/Repository/environment_buildup_set/karabiner ~/.config/
 ```
 ### scr setting
 ```bash
