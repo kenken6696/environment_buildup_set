@@ -8,7 +8,12 @@ import keyswap folder
 # foy Mac
 ## CUI
 ### start
-- install homebrew and jq
+- install [homebrew](https://brew.sh) and jq
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+brew install jq
+```
 - clone repo
 ```
 mkdir ~/Repository
